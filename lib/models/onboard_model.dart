@@ -8,3 +8,10 @@ class Onboarding {
     required this.image,
   });
 }
+
+class Countries {
+  final String name;
+  final bool isActive;
+
+  Countries({required this.name, required this.isActive});
+}

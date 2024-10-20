@@ -2,6 +2,7 @@ import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/controllers/providers/onboard_pro.dart';
 import 'package:cloth_shopping_app/models/onboard_model.dart';
+import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
@@ -32,7 +33,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(context,
+                            SelectPreferredLangPage.id, (route) => false);
+                      },
                       child: Text(
                         "Skip",
                         style: textStyle(
@@ -55,12 +59,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           children: [
                             const Spacer(),
                             if (value.pageIndex.isOdd)
-                              Column(
-                                children: [
-                                  Text(content.title),
-                                  Text(content.content),
-                                ],
-                              ),
+                              Column(children: [
+                                Text(
+                                  content.title,
+                                  textAlign: TextAlign.center,
+                                  style: textStyle(
+                                      size: 26,
+                                      color: blackColor,
+                                      weight: FontWeight.bold),
+                                ),
+                                const Gap(30),
+                                Text(
+                                  content.content,
+                                  textAlign: TextAlign.center,
+                                  style: textStyle(
+                                      size: 14,
+                                      color: blackColor,
+                                      weight: FontWeight.w600),
+                                ),
+                              ]),
                             if (value.pageIndex.isOdd) const Spacer(),
                             Image.asset(
                               content.image,
@@ -74,14 +91,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     content.title,
                                     textAlign: TextAlign.center,
                                     style: textStyle(
-                                        size: 24,
+                                        size: 26,
                                         color: blackColor,
                                         weight: FontWeight.bold),
                                   ),
-                                  const Gap(20),
+                                  const Gap(30),
                                   Text(
                                     content.content,
                                     textAlign: TextAlign.center,
+                                    style: textStyle(
+                                        size: 14,
+                                        color: blackColor,
+                                        weight: FontWeight.w600),
                                   ),
                                 ],
                               ),
@@ -98,8 +119,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         (index) => Padding(
                               padding: const EdgeInsets.only(left: 2),
                               child: AnimatedContainer(
-                                height: value.pageIndex == index ? 14 : 8,
-                                width: 4,
+                                height: value.pageIndex == index ? 16 : 8,
+                                width: 6,
                                 decoration: BoxDecoration(
                                     color: value.pageIndex == index
                                         ? primaryMaterialColor.shade300
@@ -118,7 +139,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             curve: Curves.easeIn,
                           );
                           value.changeIndex = value.pageIndex;
-                        } else {}
+                        } else {
+                          Navigator.pushNamedAndRemoveUntil(context,
+                              SelectPreferredLangPage.id, (route) => false);
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                           foregroundColor: whiteColor,
