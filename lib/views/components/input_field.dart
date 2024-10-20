@@ -23,17 +23,30 @@ class CustomTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: TextField(
         controller: controller,
-        onChanged: (value) {},
+        onChanged: onChanged,
         decoration: InputDecoration(
-            hintText: hintText,
-            suffixIcon: Icon(suffixIcon),
-            prefixIcon: Icon(prefixIcon),
-            border: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: blackColor10,
-                  width: 0.1,
-                ),
-                borderRadius: BorderRadius.all(Radius.circular(12)))),
+          hintText: hintText,
+          suffixIcon: Icon(suffixIcon),
+          prefixIcon: Icon(prefixIcon),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+                color: Colors.black, // Transparent border
+                width: 0.1),
+            borderRadius: BorderRadius.circular(12), // Rounded border
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: primaryMaterialColor, // Transparent border when focused
+            ),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          border: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.transparent),
+            borderRadius: BorderRadius.all(
+              Radius.circular(12),
+            ),
+          ),
+        ),
       ),
     );
   }
