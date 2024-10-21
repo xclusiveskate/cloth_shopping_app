@@ -1,4 +1,5 @@
 import 'package:cloth_shopping_app/constants/padding.dart';
+import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:cloth_shopping_app/views/components/app_styles.dart';
 import 'package:cloth_shopping_app/views/components/elevated_button.dart';
 import 'package:cloth_shopping_app/views/components/input_field.dart';
@@ -90,7 +91,9 @@ class _SignInPageState extends State<SignInPage> {
                                 style: textStyle(color: blackColor40),
                               ),
                               TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, SignUpPage.id);
+                                  },
                                   child: const Text("Sign up"))
                             ],
                           )

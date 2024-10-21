@@ -15,6 +15,8 @@ class RouteGenerator {
         return materialPageRoute(const SelectPreferredLangPage());
       case SignInPage.id:
         return materialPageRoute(const SignInPage());
+      case SignUpPage.id:
+        return materialPageRoute(const SignUpPage());
 
       default:
         return materialPageRoute(const OnboardingScreen());
