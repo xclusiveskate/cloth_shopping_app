@@ -3,6 +3,7 @@ import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:cloth_shopping_app/views/components/app_styles.dart';
 import 'package:cloth_shopping_app/views/components/elevated_button.dart';
 import 'package:cloth_shopping_app/views/components/input_field.dart';
+import 'package:cloth_shopping_app/views/components/label_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -52,11 +53,14 @@ class _SignInPageState extends State<SignInPage> {
                                 color: blackColor40,
                                 weight: FontWeight.w500)),
                         const Gap(20),
+                        const LabelText(labelText: "Email"),
                         CustomTextField(
                           controller: controller,
                           hintText: "Email address",
                           prefixIcon: Icons.mail,
                         ),
+                        const Gap(15),
+                        const LabelText(labelText: "Password"),
                         CustomTextField(
                           controller: controller,
                           hintText: "Password",
@@ -65,8 +69,11 @@ class _SignInPageState extends State<SignInPage> {
                         Align(
                           alignment: Alignment.center,
                           child: TextButton(
-                            onPressed: () {},
-                            child: const Text("Forgot Password"),
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, ForgotPasswordPage.id);
+                            },
+                            child: const Text("Forgot Password??"),
                           ),
                         ),
                       ],

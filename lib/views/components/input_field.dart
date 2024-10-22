@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,7 @@ class CustomTextField extends StatelessWidget {
 
   String? hintText;
   IconData? prefixIcon;
-  IconData? suffixIcon;
+  Widget? suffixIcon;
   final TextEditingController controller;
   Function(String value)? onChanged;
 
@@ -26,12 +28,16 @@ class CustomTextField extends StatelessWidget {
         onChanged: onChanged,
         decoration: InputDecoration(
           hintText: hintText,
-          suffixIcon: Icon(suffixIcon),
-          prefixIcon: Icon(prefixIcon),
+          suffixIcon: suffixIcon,
+          prefixIcon: Icon(
+            prefixIcon,
+            color: primaryColor,
+          ),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-                color: Colors.black, // Transparent border
-                width: 0.1),
+              color: Colors.black, // Transparent border
+              width: 0.5,
+            ),
             borderRadius: BorderRadius.circular(12), // Rounded border
           ),
           focusedBorder: OutlineInputBorder(

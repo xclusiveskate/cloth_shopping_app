@@ -17,6 +17,8 @@ class RouteGenerator {
         return materialPageRoute(const SignInPage());
       case SignUpPage.id:
         return materialPageRoute(const SignUpPage());
+      case ForgotPasswordPage.id:
+        return materialPageRoute(const ForgotPasswordPage());
 
       default:
         return materialPageRoute(const OnboardingScreen());
