@@ -2,6 +2,7 @@ import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/views/components/app_styles.dart';
 import 'package:cloth_shopping_app/views/components/elevated_button.dart';
 import 'package:cloth_shopping_app/views/components/input_field.dart';
+import 'package:cloth_shopping_app/views/screens/auth/otp_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -63,7 +64,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               ),
               const Spacer(),
               CustomElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, ResetOtpPage.id);
+                  },
                   child: Text(
                     "Send Otp",
                     style: textStyle(
