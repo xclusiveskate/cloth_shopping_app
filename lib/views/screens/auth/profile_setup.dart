@@ -22,6 +22,7 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Setup profile",
