@@ -2,8 +2,8 @@ import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:cloth_shopping_app/views/components/app_styles.dart';
 import 'package:cloth_shopping_app/views/components/elevated_button.dart';
-import 'package:cloth_shopping_app/views/components/input_field.dart';
 import 'package:cloth_shopping_app/views/components/label_text.dart';
+import 'package:cloth_shopping_app/views/components/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -54,16 +54,19 @@ class _SignInPageState extends State<SignInPage> {
                                 weight: FontWeight.w500)),
                         const Gap(20),
                         const LabelText(labelText: "Email"),
-                        CustomTextField(
+                        CustomTextFormField(
                           controller: controller,
                           hintText: "Email address",
                           prefixIcon: Icons.mail,
                         ),
                         const Gap(15),
                         const LabelText(labelText: "Password"),
-                        CustomTextField(
+                        CustomTextFormField(
                           controller: controller,
                           hintText: "Password",
+                          suffixIcon: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.visibility)),
                           prefixIcon: Icons.lock,
                         ),
                         Align(

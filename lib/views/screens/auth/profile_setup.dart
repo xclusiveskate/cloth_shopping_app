@@ -22,7 +22,6 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Setup profile",
@@ -58,20 +57,35 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
                       weight: FontWeight.bold),
                 ),
                 const Gap(30),
-                CustomTextFormField(
-                    hintText: "Full name",
-                    controller: TextEditingController(),
-                    prefixIcon: Icons.person),
-                const Gap(16),
-                CustomTextFormField(
-                    hintText: "Date of birth",
-                    controller: TextEditingController(),
-                    prefixIcon: Icons.calendar_view_month),
-                const Gap(16),
-                CustomTextFormField(
-                    hintText: "Phone number",
-                    controller: TextEditingController(),
-                    prefixIcon: Icons.phone),
+                Form(
+                    child: Column(
+                  children: [
+                    CustomTextFormField(
+                        hintText: "Full name",
+                        validator: (p0) {
+                          return null;
+                        },
+                        controller: TextEditingController(),
+                        prefixIcon: Icons.person),
+                    const Gap(16),
+                    CustomTextFormField(
+                        hintText: "Date of birth",
+                        controller: TextEditingController(),
+                        validator: (p0) {
+                          return null;
+                        },
+                        prefixIcon: Icons.calendar_view_month),
+                    const Gap(16),
+                    CustomTextFormField(
+                        hintText: "Phone number",
+                        keyboardType: TextInputType.phone,
+                        controller: TextEditingController(),
+                        validator: (p0) {
+                          return null;
+                        },
+                        prefixIcon: Icons.phone),
+                  ],
+                )),
                 const Spacer(),
                 CustomElevatedButton(
                   onPressed: () {},
