@@ -6,6 +6,7 @@ import 'package:cloth_shopping_app/views/components/elevated_button.dart';
 import 'package:cloth_shopping_app/views/components/input_field.dart';
 import 'package:cloth_shopping_app/views/components/label_text.dart';
 import 'package:cloth_shopping_app/views/screens/auth/login_page.dart';
+import 'package:cloth_shopping_app/views/screens/auth/profile_setup.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -109,7 +110,10 @@ class _SignUpPageState extends State<SignUpPage> {
                   Column(
                     children: [
                       CustomElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(
+                                context, ProfileSetUpScreen.id);
+                          },
                           child: Text(
                             "Continue",
                             style: textStyle(color: whiteColor),
