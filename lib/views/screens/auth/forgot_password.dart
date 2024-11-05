@@ -1,5 +1,6 @@
 import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/views/components/app_styles.dart';
+import 'package:cloth_shopping_app/views/components/back_button.dart';
 import 'package:cloth_shopping_app/views/components/elevated_button.dart';
 import 'package:cloth_shopping_app/views/components/input_field.dart';
 import 'package:cloth_shopping_app/views/screens/auth/otp_page.dart';
@@ -28,20 +29,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: blackColor, width: 0.5),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(8))),
-                      child: const Icon(Icons.arrow_back_sharp),
-                    ),
-                  ),
+                  const CustomBackButton(),
                   const Gap(50),
                   Text(
                     "Password recovery",
