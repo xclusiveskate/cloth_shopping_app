@@ -19,9 +19,11 @@ class PasswordResetSuccessScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // const Spacer(),
-              Image.asset(
-                "name",
-                height: 300,
+              Container(
+                child: Image.asset(
+                  "assets/images/shield.png",
+                  height: 500,
+                ),
               ),
               Text(
                 "Your password has been changed successfully!",

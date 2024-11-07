@@ -1,3 +1,4 @@
+import 'package:cloth_shopping_app/controllers/providers/auth_pro.dart';
 import 'package:cloth_shopping_app/controllers/providers/onboard_pro.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:cloth_shopping_app/routes/route.dart';
@@ -9,6 +10,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => OnboardingProvider()),
+        ChangeNotifierProvider(create: (context) => AuthProvider()),
       ],
       child: const MyApp(),
     ),

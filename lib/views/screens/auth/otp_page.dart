@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
@@ -20,6 +22,8 @@ class _ResetOtpPageState extends State<ResetOtpPage> {
   final controllers = List.generate(4, (index) => TextEditingController());
 
   String otp = "";
+  int timeRemaining = 180;
+  late Timer timer;
 
   String getOtp() {
     return controllers.map((e) => e.text).join();
@@ -27,6 +31,31 @@ class _ResetOtpPageState extends State<ResetOtpPage> {
 
   validateOtp() {
     otp = getOtp();
+  }
+
+  startCountdown() {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (timeRemaining > 0) {
+        setState(() {
+          timeRemaining--;
+        });
+      } else {
+        timer.cancel();
+      }
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    startCountdown();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    timer.cancel();
+    super.dispose();
   }
 
   @override
@@ -65,8 +94,9 @@ class _ResetOtpPageState extends State<ResetOtpPage> {
                   const Text("Resend code after"),
                   const Gap(10),
                   Text(
-                    "1:30",
-                    style: textStyle(color: primaryColor),
+                    _formatDuration(timeRemaining),
+                    style:
+                        textStyle(color: primaryColor, weight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -75,7 +105,16 @@ class _ResetOtpPageState extends State<ResetOtpPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   CustomElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (timeRemaining == 0) {
+                        setState(() {
+                          timeRemaining = 180;
+                          startCountdown();
+                        });
+                      } else {
+                        return;
+                      }
+                    },
                     minimumSize: Size(widthQuery(context) * 0.45, 55),
                     backColor: Colors.white,
                     child: Text(
@@ -105,5 +144,15 @@ class _ResetOtpPageState extends State<ResetOtpPage> {
         ),
       ),
     );
+  }
+
+  String _formatDuration(int secondsRemaining) {
+    Duration duration = Duration(seconds: secondsRemaining);
+
+    String twoDigits(int n) => n.toString().padLeft(2, "0");
+    String minutes = twoDigits(duration.inMinutes.remainder(60));
+    String seconds = twoDigits(duration.inSeconds.remainder(60));
+
+    return "$minutes: $seconds";
   }
 }

@@ -1,4 +1,5 @@
 import 'package:cloth_shopping_app/constants/colors.dart';
+import 'package:cloth_shopping_app/constants/validators.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:cloth_shopping_app/views/components/app_styles.dart';
 import 'package:cloth_shopping_app/views/components/back_button.dart';
@@ -17,6 +18,12 @@ class EnterNewPasswordPage extends StatefulWidget {
 }
 
 class _EnterNewPasswordPageState extends State<EnterNewPasswordPage> {
+  final passwword = TextEditingController();
+  final confirmPasswword = TextEditingController();
+
+  final formKey = GlobalKey<FormState>();
+
+  bool isVisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,30 +45,74 @@ class _EnterNewPasswordPageState extends State<EnterNewPasswordPage> {
                 style: textStyle(size: 14, weight: FontWeight.w200),
               ),
               const Gap(25),
-              CustomTextFormField(
-                hintText: "New password",
-                controller: TextEditingController(),
-                prefixIcon: Icons.lock,
-                validator: (p0) {
-                  return null;
-                },
-              ),
-              const Gap(20),
-              CustomTextFormField(
-                hintText: "New password again",
-                controller: TextEditingController(),
-                prefixIcon: Icons.lock,
-                validator: (p0) {
-                  return null;
-                },
-              ),
+              Form(
+                  key: formKey,
+                  child: Column(
+                    children: [
+                      CustomTextFormField(
+                        hintText: "New password",
+                        controller: passwword,
+                        prefixIcon: Icons.lock,
+                        obscureText: isVisible,
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isVisible = !isVisible;
+                              });
+                            },
+                            icon: isVisible
+                                ? const Icon(
+                                    Icons.visibility,
+                                    color: primaryMaterialColor,
+                                  )
+                                : const Icon(
+                                    Icons.visibility_off,
+                                    color: primaryMaterialColor,
+                                  )),
+                        validator: (pass) {
+                          return Validators.validatePassword(pass!);
+                        },
+                      ),
+                      const Gap(20),
+                      CustomTextFormField(
+                        hintText: "New password again",
+                        controller: confirmPasswword,
+                        prefixIcon: Icons.lock,
+                        obscureText: isVisible,
+                        suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isVisible = !isVisible;
+                              });
+                            },
+                            icon: isVisible
+                                ? const Icon(
+                                    Icons.visibility,
+                                    color: primaryMaterialColor,
+                                  )
+                                : const Icon(
+                                    Icons.visibility_off,
+                                    color: primaryMaterialColor,
+                                  )),
+                        validator: (pass) {
+                          if (passwword.text != pass) {
+                            return "Password does not match";
+                          } else {
+                            return null;
+                          }
+                        },
+                      ),
+                    ],
+                  )),
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: CustomElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacementNamed(
-                        context, PasswordResetSuccessScreen.id);
+                    if (formKey.currentState!.validate()) {
+                      Navigator.pushReplacementNamed(
+                          context, PasswordResetSuccessScreen.id);
+                    }
                   },
                   child: Text(
                     "Change Password",
