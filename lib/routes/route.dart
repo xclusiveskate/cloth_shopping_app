@@ -27,6 +27,8 @@ class RouteGenerator {
         return materialPageRoute(const PasswordResetSuccessScreen());
       case ProfileSetUpScreen.id:
         return materialPageRoute(const ProfileSetUpScreen());
+      case VerifyEmailOtp.id:
+        return materialPageRoute(const VerifyEmailOtp());
 
       default:
         return materialPageRoute(const OnboardingScreen());

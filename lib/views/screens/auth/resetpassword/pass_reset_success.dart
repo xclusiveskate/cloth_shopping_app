@@ -1,7 +1,4 @@
-import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:cloth_shopping_app/views/components/app_styles.dart';
-import 'package:cloth_shopping_app/views/components/elevated_button.dart';
 import 'package:flutter/material.dart';
 
 class PasswordResetSuccessScreen extends StatelessWidget {

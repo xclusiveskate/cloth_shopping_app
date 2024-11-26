@@ -1,24 +1,20 @@
 import 'dart:async';
 
-import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:cloth_shopping_app/views/components/app_styles.dart';
 import 'package:cloth_shopping_app/views/components/back_button.dart';
-import 'package:cloth_shopping_app/views/components/elevated_button.dart';
 import 'package:cloth_shopping_app/views/components/otp_fields.dart';
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
-class ResetOtpPage extends StatefulWidget {
-  const ResetOtpPage({super.key});
+class CustomOtpPage extends StatefulWidget {
+  const CustomOtpPage({super.key, required this.onPressed});
 
-  static const id = "resetOtpPage";
+  // static const id = "customOtpPage";
+  final VoidCallback onPressed;
   @override
-  State<ResetOtpPage> createState() => _ResetOtpPageState();
+  State<CustomOtpPage> createState() => _CustomOtpPageState();
 }
 
-class _ResetOtpPageState extends State<ResetOtpPage> {
+class _CustomOtpPageState extends State<CustomOtpPage> {
   final controllers = List.generate(4, (index) => TextEditingController());
 
   String otp = "";
@@ -126,9 +122,7 @@ class _ResetOtpPageState extends State<ResetOtpPage> {
                     ),
                   ),
                   CustomElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, EnterNewPasswordPage.id);
-                    },
+                    onPressed: widget.onPressed,
                     minimumSize: Size(widthQuery(context) * 0.45, 55),
                     backColor: primaryMaterialColor,
                     child: Text(
@@ -146,7 +140,7 @@ class _ResetOtpPageState extends State<ResetOtpPage> {
     );
   }
 
-  String _formatDuration(int secondsRemaining) {
+  _formatDuration(int secondsRemaining) {
     Duration duration = Duration(seconds: secondsRemaining);
 
     String twoDigits(int n) => n.toString().padLeft(2, "0");
