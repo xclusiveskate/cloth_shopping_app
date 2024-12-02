@@ -68,7 +68,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 ),
                 const Spacer(),
                 CustomElevatedButton(
-                    backColor: primaryMaterialColor,
+                    backColor: primaryColor,
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         Navigator.pushNamed(context, ResetOtpPage.id);

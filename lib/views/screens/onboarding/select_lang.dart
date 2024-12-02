@@ -1,11 +1,7 @@
-import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/models/onboard_model.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:cloth_shopping_app/views/components/app_styles.dart';
 import 'package:cloth_shopping_app/views/components/input_field.dart';
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 class SelectPreferredLangPage extends StatefulWidget {
   const SelectPreferredLangPage({super.key});
@@ -68,8 +64,7 @@ class _SelectPreferredLangPageState extends State<SelectPreferredLangPage> {
                     return Padding(
                       padding: const EdgeInsets.only(top: 16.0),
                       child: ListTile(
-                        selectedTileColor:
-                            selected ? primaryMaterialColor : null,
+                        selectedTileColor: selected ? primaryColor : null,
                         selected: selected,
                         onTap: () {
                           setState(() {
@@ -117,7 +112,7 @@ class _SelectPreferredLangPageState extends State<SelectPreferredLangPage> {
                         context, SignInPage.id, (route) => false);
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: primaryMaterialColor,
+                      backgroundColor: primaryColor,
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12))),
                       minimumSize: const Size(double.infinity, 55)),

@@ -1,4 +1,5 @@
 export 'package:cloth_shopping_app/constants/colors.dart';
+export 'package:cloth_shopping_app/entry_point.dart';
 export 'package:cloth_shopping_app/views/components/app_styles.dart';
 export 'package:cloth_shopping_app/views/components/custom_otp_page.dart';
 export 'package:cloth_shopping_app/views/components/elevated_button.dart';

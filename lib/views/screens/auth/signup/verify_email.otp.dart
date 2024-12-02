@@ -17,7 +17,7 @@ class _VerifyEmailOtpState extends State<VerifyEmailOtp> {
         await showDialog(
             context: context,
             barrierDismissible: false,
-            barrierColor: greyColor,
+            barrierColor: greyLight,
             builder: (context) {
               return Dialog(
                 insetPadding: const EdgeInsets.all(12),
@@ -39,7 +39,7 @@ class _VerifyEmailOtpState extends State<VerifyEmailOtp> {
                           child: Text(
                             "Go to log in",
                             style: textStyle(
-                                color: whiteColor,
+                                color: offWhite,
                                 weight: FontWeight.w500,
                                 size: 15),
                           ))

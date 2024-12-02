@@ -124,7 +124,7 @@ class _CustomOtpPageState extends State<CustomOtpPage> {
                   CustomElevatedButton(
                     onPressed: widget.onPressed,
                     minimumSize: Size(widthQuery(context) * 0.45, 55),
-                    backColor: primaryMaterialColor,
+                    backColor: primaryColor,
                     child: Text(
                       "Confirm",
                       style: textStyle(

@@ -2,7 +2,6 @@ import 'package:cloth_shopping_app/controllers/providers/auth_pro.dart';
 import 'package:cloth_shopping_app/controllers/providers/onboard_pro.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:cloth_shopping_app/routes/route.dart';
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: RouteGenerator.routes,
 
       //if user is onboarded and loggedIn(home), onboarded and not loggedin(log in page), not on boarded(onboarding )
-      initialRoute: OnboardingScreen.id,
+      initialRoute: EntryPoint.id,
     );
   }
 }

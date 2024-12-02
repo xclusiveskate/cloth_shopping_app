@@ -42,7 +42,7 @@ class CustomTextField extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: primaryMaterialColor, // Transparent border when focused
+              color: primaryColor, // Transparent border when focused
             ),
             borderRadius: BorderRadius.circular(12),
           ),

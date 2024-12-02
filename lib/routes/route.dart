@@ -1,4 +1,5 @@
 //create a function that takes in a parameter of type RouteSettings returning Route<dynamic
+
 import 'package:cloth_shopping_app/routes/route_components.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +30,8 @@ class RouteGenerator {
         return materialPageRoute(const ProfileSetUpScreen());
       case VerifyEmailOtp.id:
         return materialPageRoute(const VerifyEmailOtp());
+      case EntryPoint.id:
+        return materialPageRoute(const EntryPoint());
 
       default:
         return materialPageRoute(const OnboardingScreen());

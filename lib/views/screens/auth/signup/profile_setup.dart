@@ -74,9 +74,7 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
                 Text(
                   "Upload image",
                   style: textStyle(
-                      color: primaryMaterialColor,
-                      size: 14,
-                      weight: FontWeight.bold),
+                      color: primaryColor, size: 14, weight: FontWeight.bold),
                 ),
                 const Gap(30),
                 Form(

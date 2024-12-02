@@ -1,12 +1,6 @@
-import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/constants/validators.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:cloth_shopping_app/views/components/app_styles.dart';
 import 'package:cloth_shopping_app/views/components/back_button.dart';
-import 'package:cloth_shopping_app/views/components/elevated_button.dart';
-import 'package:cloth_shopping_app/views/components/text_form_field.dart';
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 class EnterNewPasswordPage extends StatefulWidget {
   const EnterNewPasswordPage({super.key});
@@ -63,11 +57,11 @@ class _EnterNewPasswordPageState extends State<EnterNewPasswordPage> {
                             icon: isVisible
                                 ? const Icon(
                                     Icons.visibility,
-                                    color: primaryMaterialColor,
+                                    color: primaryColor,
                                   )
                                 : const Icon(
                                     Icons.visibility_off,
-                                    color: primaryMaterialColor,
+                                    color: primaryColor,
                                   )),
                         validator: (pass) {
                           return Validators.validatePassword(pass!);
@@ -88,11 +82,11 @@ class _EnterNewPasswordPageState extends State<EnterNewPasswordPage> {
                             icon: isVisible
                                 ? const Icon(
                                     Icons.visibility,
-                                    color: primaryMaterialColor,
+                                    color: primaryColor,
                                   )
                                 : const Icon(
                                     Icons.visibility_off,
-                                    color: primaryMaterialColor,
+                                    color: primaryColor,
                                   )),
                         validator: (pass) {
                           if (passwword.text != pass) {
