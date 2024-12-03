@@ -7,11 +7,11 @@ BottomNavigationBar bottomNavigationBarMenu(
     onTap: onTap,
     elevation: 0,
     currentIndex: currentIndex,
-    backgroundColor: navigationBarBackground,
+    backgroundColor: AppColors.navigationBarBackground,
     type: BottomNavigationBarType.fixed,
     iconSize: 14,
     selectedFontSize: 12,
-    selectedItemColor: primaryColor,
+    selectedItemColor: AppColors.primaryColor,
     selectedLabelStyle: textStyle(size: 12, weight: FontWeight.bold),
     showSelectedLabels: true,
     // unselectedItemColor: offWhite,
@@ -40,5 +40,5 @@ BottomNavigationBar bottomNavigationBarMenu(
 }
 
 Color getCurrentColor(bool isSelected) {
-  return isSelected ? primaryColor : gray.withOpacity(0.7);
+  return isSelected ? AppColors.primaryColor : AppColors.gray.withOpacity(0.7);
 }

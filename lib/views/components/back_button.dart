@@ -1,4 +1,6 @@
 import 'package:cloth_shopping_app/constants/colors.dart';
+import 'package:cloth_shopping_app/constants/images.dart';
+import 'package:cloth_shopping_app/views/components/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 
 class CustomBackButton extends StatelessWidget {
@@ -8,18 +10,12 @@ class CustomBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return CustomIconButton(
       onTap: () {
         Navigator.pop(context);
       },
-      child: Container(
-        height: 30,
-        width: 30,
-        decoration: BoxDecoration(
-            border: Border.all(color: blackColor, width: 0.5),
-            borderRadius: const BorderRadius.all(Radius.circular(8))),
-        child: const Icon(Icons.arrow_back_sharp),
-      ),
+      src: Images.arrowRight,
+      iconColor: AppColors.blackColor,
     );
   }
 }

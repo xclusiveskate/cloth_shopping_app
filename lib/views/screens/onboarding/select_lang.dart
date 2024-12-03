@@ -40,7 +40,8 @@ class _SelectPreferredLangPageState extends State<SelectPreferredLangPage> {
                         const Gap(5),
                         Text(
                             "You will use the same language throughout the app",
-                            style: textStyle(size: 13, color: blackColor60))
+                            style: textStyle(
+                                size: 13, color: AppColors.blackColor60))
                       ],
                     ),
                     const Spacer(),
@@ -64,7 +65,8 @@ class _SelectPreferredLangPageState extends State<SelectPreferredLangPage> {
                     return Padding(
                       padding: const EdgeInsets.only(top: 16.0),
                       child: ListTile(
-                        selectedTileColor: selected ? primaryColor : null,
+                        selectedTileColor:
+                            selected ? AppColors.primaryColor : null,
                         selected: selected,
                         onTap: () {
                           setState(() {
@@ -73,7 +75,8 @@ class _SelectPreferredLangPageState extends State<SelectPreferredLangPage> {
                           print(selectedIndex);
                         },
                         shape: const RoundedRectangleBorder(
-                            side: BorderSide(width: 1.0, color: blackColor20),
+                            side: BorderSide(
+                                width: 1.0, color: AppColors.blackColor20),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(12))),
                         title: Text(country.name),
@@ -89,12 +92,12 @@ class _SelectPreferredLangPageState extends State<SelectPreferredLangPage> {
                                     height: 15,
                                     width: 15,
                                     decoration: const BoxDecoration(
-                                        color: whiteColor,
+                                        color: AppColors.whiteColor,
                                         borderRadius: BorderRadius.all(
                                             Radius.circular(20))),
                                     child: const Icon(
                                       Icons.check,
-                                      color: primaryColor,
+                                      color: AppColors.primaryColor,
                                       size: 12,
                                     ),
                                   )
@@ -112,14 +115,16 @@ class _SelectPreferredLangPageState extends State<SelectPreferredLangPage> {
                         context, SignInPage.id, (route) => false);
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: primaryColor,
+                      backgroundColor: AppColors.primaryColor,
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(12))),
                       minimumSize: const Size(double.infinity, 55)),
                   child: Text(
                     "Next",
                     style: textStyle(
-                        color: whiteColor, weight: FontWeight.bold, size: 20),
+                        color: AppColors.whiteColor,
+                        weight: FontWeight.bold,
+                        size: 20),
                   ),
                 ),
               )

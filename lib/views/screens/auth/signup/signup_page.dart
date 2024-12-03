@@ -50,13 +50,15 @@ class _SignUpPageState extends State<SignUpPage> {
                     Text(
                       "Create Account",
                       style: textStyle(
-                          size: 24, color: blackColor, weight: FontWeight.w500),
+                          size: 24,
+                          color: AppColors.blackColor,
+                          weight: FontWeight.w500),
                     ),
                     const Gap(3),
                     Text("Join Now for Premium Access to Exclusive offers!!'",
                         style: textStyle(
                             size: 14,
-                            color: blackColor60,
+                            color: AppColors.blackColor60,
                             weight: FontWeight.w500)),
                     const Gap(10),
                     const Gap(20),
@@ -141,14 +143,14 @@ class _SignUpPageState extends State<SignUpPage> {
                             },
                             child: Text(
                               "Continue",
-                              style: textStyle(color: whiteColor),
+                              style: textStyle(color: AppColors.whiteColor),
                             )),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               "Do you have an account?",
-                              style: textStyle(color: blackColor40),
+                              style: textStyle(color: AppColors.blackColor40),
                             ),
                             TextButton(
                                 onPressed: () {

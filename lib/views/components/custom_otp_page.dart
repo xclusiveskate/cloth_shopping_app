@@ -91,8 +91,8 @@ class _CustomOtpPageState extends State<CustomOtpPage> {
                   const Gap(10),
                   Text(
                     _formatDuration(timeRemaining),
-                    style:
-                        textStyle(color: primaryColor, weight: FontWeight.bold),
+                    style: textStyle(
+                        color: AppColors.primaryColor, weight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -116,7 +116,7 @@ class _CustomOtpPageState extends State<CustomOtpPage> {
                     child: Text(
                       "Resend",
                       style: textStyle(
-                          color: primaryColor,
+                          color: AppColors.primaryColor,
                           size: 18,
                           weight: FontWeight.w400),
                     ),
@@ -124,11 +124,13 @@ class _CustomOtpPageState extends State<CustomOtpPage> {
                   CustomElevatedButton(
                     onPressed: widget.onPressed,
                     minimumSize: Size(widthQuery(context) * 0.45, 55),
-                    backColor: primaryColor,
+                    backColor: AppColors.primaryColor,
                     child: Text(
                       "Confirm",
                       style: textStyle(
-                          color: whiteColor, size: 18, weight: FontWeight.w400),
+                          color: AppColors.whiteColor,
+                          size: 18,
+                          weight: FontWeight.w400),
                     ),
                   )
                 ],

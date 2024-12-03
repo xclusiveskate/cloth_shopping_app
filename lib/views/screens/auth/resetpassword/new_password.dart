@@ -57,11 +57,11 @@ class _EnterNewPasswordPageState extends State<EnterNewPasswordPage> {
                             icon: isVisible
                                 ? const Icon(
                                     Icons.visibility,
-                                    color: primaryColor,
+                                    color: AppColors.primaryColor,
                                   )
                                 : const Icon(
                                     Icons.visibility_off,
-                                    color: primaryColor,
+                                    color: AppColors.primaryColor,
                                   )),
                         validator: (pass) {
                           return Validators.validatePassword(pass!);
@@ -82,11 +82,11 @@ class _EnterNewPasswordPageState extends State<EnterNewPasswordPage> {
                             icon: isVisible
                                 ? const Icon(
                                     Icons.visibility,
-                                    color: primaryColor,
+                                    color: AppColors.primaryColor,
                                   )
                                 : const Icon(
                                     Icons.visibility_off,
-                                    color: primaryColor,
+                                    color: AppColors.primaryColor,
                                   )),
                         validator: (pass) {
                           if (passwword.text != pass) {
@@ -111,7 +111,9 @@ class _EnterNewPasswordPageState extends State<EnterNewPasswordPage> {
                   child: Text(
                     "Change Password",
                     style: textStyle(
-                        color: whiteColor, size: 14, weight: FontWeight.w700),
+                        color: AppColors.whiteColor,
+                        size: 14,
+                        weight: FontWeight.w700),
                   ),
                 ),
               )

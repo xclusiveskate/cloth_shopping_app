@@ -38,10 +38,10 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType ?? TextInputType.text,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: textStyle(color: darkGreyColor),
+        hintStyle: textStyle(color: AppColors.darkGreyColor),
         prefixIcon: Icon(
           prefixIcon,
-          color: darkGreyColor,
+          color: AppColors.darkGreyColor,
         ),
         suffixIcon: suffixIcon,
         border: const OutlineInputBorder(

@@ -40,7 +40,9 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
                 Text(
                   "Setup profile",
                   style: textStyle(
-                      color: blackColor, size: 14, weight: FontWeight.w700),
+                      color: AppColors.blackColor,
+                      size: 14,
+                      weight: FontWeight.w700),
                 ),
                 const Gap(25),
                 Stack(
@@ -66,7 +68,7 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
                             shape: const CircleBorder(),
                             child: const Icon(
                               Icons.camera_alt_outlined,
-                              color: whiteColor,
+                              color: AppColors.whiteColor,
                             )))
                   ],
                 ),
@@ -74,7 +76,9 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
                 Text(
                   "Upload image",
                   style: textStyle(
-                      color: primaryColor, size: 14, weight: FontWeight.bold),
+                      color: AppColors.primaryColor,
+                      size: 14,
+                      weight: FontWeight.bold),
                 ),
                 const Gap(30),
                 Form(
@@ -130,7 +134,9 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
                   child: Text(
                     "Sign up",
                     style: textStyle(
-                        color: whiteColor, size: 14, weight: FontWeight.w600),
+                        color: AppColors.whiteColor,
+                        size: 14,
+                        weight: FontWeight.w600),
                   ),
                 )
               ],

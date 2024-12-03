@@ -1,5 +1,4 @@
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:flutter/material.dart';
 
 class PasswordResetSuccessScreen extends StatelessWidget {
   const PasswordResetSuccessScreen({super.key});
@@ -34,7 +33,9 @@ class PasswordResetSuccessScreen extends StatelessWidget {
                   child: Text(
                     "Log in",
                     style: textStyle(
-                        color: whiteColor, size: 14, weight: FontWeight.w600),
+                        color: AppColors.whiteColor,
+                        size: 14,
+                        weight: FontWeight.w600),
                   ))
             ],
           ),

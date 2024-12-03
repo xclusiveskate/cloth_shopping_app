@@ -44,13 +44,17 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     Text(
                       "Password recovery",
                       style: textStyle(
-                          color: blackColor, weight: FontWeight.bold, size: 24),
+                          color: AppColors.blackColor,
+                          weight: FontWeight.bold,
+                          size: 24),
                     ),
                     const Gap(15),
                     Text(
                       "We'll send you verification code to reset your password",
                       style: textStyle(
-                          color: blackColor, weight: FontWeight.w400, size: 18),
+                          color: AppColors.blackColor,
+                          weight: FontWeight.w400,
+                          size: 18),
                     ),
                     const Gap(30),
                     Form(
@@ -68,7 +72,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 ),
                 const Spacer(),
                 CustomElevatedButton(
-                    backColor: primaryColor,
+                    backColor: AppColors.primaryColor,
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         Navigator.pushNamed(context, ResetOtpPage.id);
@@ -77,7 +81,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     child: Text(
                       "Send Otp",
                       style: textStyle(
-                          color: whiteColor, weight: FontWeight.w400, size: 20),
+                          color: AppColors.whiteColor,
+                          weight: FontWeight.w400,
+                          size: 20),
                     ))
               ],
             ),

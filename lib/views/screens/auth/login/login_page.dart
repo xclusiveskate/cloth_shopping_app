@@ -2,9 +2,6 @@ import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/constants/validators.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:cloth_shopping_app/views/components/label_text.dart';
-import 'package:cloth_shopping_app/views/components/text_form_field.dart';
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -46,13 +43,13 @@ class _SignInPageState extends State<SignInPage> {
                     Text(
                       "Welcome !!!",
                       style: textStyle(
-                          size: 24, color: blackColor, weight: FontWeight.w500),
+                          size: 24, color: AppColors.blackColor, weight: FontWeight.w500),
                     ),
                     const Gap(5),
                     Text("Log in to continue enjoying our exclusive offers",
                         style: textStyle(
                             size: 16,
-                            color: blackColor40,
+                            color: AppColors.blackColor40,
                             weight: FontWeight.w500)),
                     const Gap(20),
                     Form(
@@ -104,17 +101,17 @@ class _SignInPageState extends State<SignInPage> {
                                 print("Validated");
                               }
                             },
-                            backColor: primaryColor,
+                            backColor: AppColors.primaryColor,
                             child: Text(
                               "Log In",
-                              style: textStyle(color: whiteColor),
+                              style: textStyle(color: AppColors.whiteColor),
                             )),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               "Don't have an account?",
-                              style: textStyle(color: blackColor40),
+                              style: textStyle(color: AppColors.blackColor40),
                             ),
                             TextButton(
                                 onPressed: () {

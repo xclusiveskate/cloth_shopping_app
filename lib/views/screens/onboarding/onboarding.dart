@@ -36,7 +36,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         "Skip",
                         style: textStyle(
                           size: 16,
-                          color: primaryColor,
+                          color: AppColors.primaryColor,
                           weight: FontWeight.w700,
                         ),
                       )),
@@ -60,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   textAlign: TextAlign.center,
                                   style: textStyle(
                                       size: 26,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                       weight: FontWeight.bold),
                                 ),
                                 const Gap(30),
@@ -69,7 +69,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   textAlign: TextAlign.center,
                                   style: textStyle(
                                       size: 14,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                       weight: FontWeight.w600),
                                 ),
                               ]),
@@ -87,7 +87,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     textAlign: TextAlign.center,
                                     style: textStyle(
                                         size: 26,
-                                        color: blackColor,
+                                        color: AppColors.blackColor,
                                         weight: FontWeight.bold),
                                   ),
                                   const Gap(30),
@@ -96,7 +96,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     textAlign: TextAlign.center,
                                     style: textStyle(
                                         size: 14,
-                                        color: blackColor,
+                                        color: AppColors.blackColor,
                                         weight: FontWeight.w600),
                                   ),
                                 ],
@@ -118,8 +118,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 width: 6,
                                 decoration: BoxDecoration(
                                     color: value.pageIndex == index
-                                        ? primaryColor
-                                        : primaryColor.withOpacity(
+                                        ? AppColors.primaryColor
+                                        : AppColors.primaryColor.withOpacity(
                                             0.5), //coming back to use shadde
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(8))),
@@ -141,10 +141,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                          foregroundColor: whiteColor,
+                          foregroundColor: AppColors.whiteColor,
                           minimumSize: const Size(60, 60),
                           backgroundColor:
-                              primaryColor, //coming back to use shade
+                              AppColors.primaryColor, //coming back to use shade
                           shape: const CircleBorder(),
                           elevation: 2),
                       child: SvgPicture.asset(
@@ -152,7 +152,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         height: 15,
                         width: 15,
                         colorFilter: const ColorFilter.mode(
-                          whiteColor,
+                          AppColors.whiteColor,
                           BlendMode.srcIn,
                         ),
                       ),

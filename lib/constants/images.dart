@@ -13,8 +13,11 @@ class Images {
   static const bookmark = "$icon/bookmark.svg";
   static const cart = "$icon/cart.svg";
   static const profile = "$icon/profile.svg";
+  static const arrowRight = "assets/icons/arrow_right.svg";
+  static const notification = "assets/icons/notification.svg";
 
   //IMAGES IMAGES IMAGES
+  static const placeholder = "assets/images/placeholder.jpg";
 
   //ILLUSTRATIONS ILLUSTRATIONS
 }
@@ -30,6 +33,7 @@ SvgPicture svgIcon(
   return SvgPicture.asset(
     src,
     height: 24,
-    colorFilter: ColorFilter.mode(color ?? primaryColor, BlendMode.srcIn),
+    colorFilter:
+        ColorFilter.mode(color ?? AppColors.primaryColor, BlendMode.srcIn),
   );
 }
