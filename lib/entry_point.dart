@@ -27,9 +27,11 @@ class _EntryPointState extends State<EntryPoint> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.offWhite,
-      body: IndexedStack(
-        index: currentIndex,
-        children: pages,
+      body: SingleChildScrollView(
+        child: IndexedStack(
+          index: currentIndex,
+          children: pages,
+        ),
       ),
       bottomNavigationBar: bottomNavigationBarMenu(
           currentIndex: currentIndex,
