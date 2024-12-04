@@ -26,12 +26,12 @@ class CustomElevatedButton extends StatelessWidget {
         elevation: 6,
         foregroundColor: Colors.blueGrey,
         minimumSize: minimumSize ?? const Size(double.infinity, 55),
-        backgroundColor: backColor ?? primaryColor,
+        backgroundColor: backColor ?? AppColors.primaryColor,
         shape: shape ??
             const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(12))),
-        textStyle:
-            textStyle(size: 16, color: whiteColor, weight: FontWeight.bold),
+        textStyle: textStyle(
+            size: 16, color: AppColors.whiteColor, weight: FontWeight.bold),
       ),
       child: child,
     );

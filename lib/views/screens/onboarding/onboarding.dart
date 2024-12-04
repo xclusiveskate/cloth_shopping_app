@@ -1,14 +1,9 @@
-import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/controllers/providers/onboard_pro.dart';
 import 'package:cloth_shopping_app/models/onboard_model.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
-
-import '../../components/app_styles.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -41,7 +36,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         "Skip",
                         style: textStyle(
                           size: 16,
-                          color: primaryColor,
+                          color: AppColors.primaryColor,
                           weight: FontWeight.w700,
                         ),
                       )),
@@ -65,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   textAlign: TextAlign.center,
                                   style: textStyle(
                                       size: 26,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                       weight: FontWeight.bold),
                                 ),
                                 const Gap(30),
@@ -74,7 +69,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   textAlign: TextAlign.center,
                                   style: textStyle(
                                       size: 14,
-                                      color: blackColor,
+                                      color: AppColors.blackColor,
                                       weight: FontWeight.w600),
                                 ),
                               ]),
@@ -92,7 +87,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     textAlign: TextAlign.center,
                                     style: textStyle(
                                         size: 26,
-                                        color: blackColor,
+                                        color: AppColors.blackColor,
                                         weight: FontWeight.bold),
                                   ),
                                   const Gap(30),
@@ -101,7 +96,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                     textAlign: TextAlign.center,
                                     style: textStyle(
                                         size: 14,
-                                        color: blackColor,
+                                        color: AppColors.blackColor,
                                         weight: FontWeight.w600),
                                   ),
                                 ],
@@ -123,8 +118,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 width: 6,
                                 decoration: BoxDecoration(
                                     color: value.pageIndex == index
-                                        ? primaryMaterialColor.shade300
-                                        : primaryMaterialColor.shade100,
+                                        ? AppColors.primaryColor
+                                        : AppColors.primaryColor.withOpacity(
+                                            0.5), //coming back to use shadde
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(8))),
                                 duration: const Duration(seconds: 1),
@@ -145,9 +141,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                          foregroundColor: whiteColor,
+                          foregroundColor: AppColors.whiteColor,
                           minimumSize: const Size(60, 60),
-                          backgroundColor: primaryMaterialColor.shade300,
+                          backgroundColor:
+                              AppColors.primaryColor, //coming back to use shade
                           shape: const CircleBorder(),
                           elevation: 2),
                       child: SvgPicture.asset(
@@ -155,7 +152,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         height: 15,
                         width: 15,
                         colorFilter: const ColorFilter.mode(
-                          whiteColor,
+                          AppColors.whiteColor,
                           BlendMode.srcIn,
                         ),
                       ),
