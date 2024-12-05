@@ -1,7 +1,6 @@
 //create a function that takes in a parameter of type RouteSettings returning Route<dynamic
 
 import 'package:cloth_shopping_app/routes/route_components.dart';
-import 'package:flutter/material.dart';
 
 import "exports.dart";
 

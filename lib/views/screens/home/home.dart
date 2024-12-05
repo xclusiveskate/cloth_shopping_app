@@ -1,10 +1,10 @@
 import 'package:cloth_shopping_app/constants/images.dart';
-import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/constants/texts.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:cloth_shopping_app/views/components/custom_circleavatar.dart';
 import 'package:cloth_shopping_app/views/components/custom_icon_button.dart';
 import 'package:cloth_shopping_app/views/components/horizontal_product_card.dart';
+import 'package:cloth_shopping_app/views/components/product_listview.dart';
 import 'package:cloth_shopping_app/views/components/vertical_product_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -51,9 +51,18 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const Gap(15),
-            Container(
-              color: Colors.blue,
-              height: heightQuery(context) * 0.3,
+            AspectRatio(
+              aspectRatio: 1.87,
+              child: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  PageView.builder(
+                      itemCount: 5,
+                      itemBuilder: (context, index) {
+                        return Container();
+                      })
+                ],
+              ),
             ),
             const Gap(10),
             Text(
@@ -110,32 +119,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class ProductListView extends StatelessWidget {
-  const ProductListView({
-    super.key,
-    required this.viewHeight,
-    required this.itemCount,
-    required this.scrollDirection,
-    this.product,
-  });
-  final double viewHeight;
-  final int itemCount;
-  final Axis scrollDirection;
-  final Widget? product;
 
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: viewHeight,
-      child: ListView.builder(
-          itemCount: itemCount,
-          scrollDirection: scrollDirection,
-          itemBuilder: ((context, index) {
-            return product;
-          })),
-    );
-  }
-}
 
 
 

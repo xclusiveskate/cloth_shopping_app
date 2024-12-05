@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart' as badges;
 import 'package:cloth_shopping_app/constants/images.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
 
@@ -27,9 +28,12 @@ BottomNavigationBar bottomNavigationBarMenu(
       BottomNavigationBarItem(
           icon: svgIcon(Images.bookmark,
               color: getCurrentColor(currentIndex == 2)),
-          label: "Bookmarks"),
+          label: "Wishlist"),
       BottomNavigationBarItem(
-          icon: svgIcon(Images.cart, color: getCurrentColor(currentIndex == 3)),
+          icon: badges.Badge(
+              badgeContent: const Text('3'),
+              child: svgIcon(Images.cart,
+                  color: getCurrentColor(currentIndex == 3))),
           label: "Cart"),
       BottomNavigationBarItem(
           icon: svgIcon(Images.profile,
