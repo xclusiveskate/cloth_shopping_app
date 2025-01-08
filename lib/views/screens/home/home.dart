@@ -1,8 +1,12 @@
+import 'dart:async';
+
 import 'package:cloth_shopping_app/constants/images.dart';
+import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/constants/texts.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
 import 'package:cloth_shopping_app/views/components/custom_circleavatar.dart';
 import 'package:cloth_shopping_app/views/components/custom_icon_button.dart';
+import 'package:cloth_shopping_app/views/components/dot.indicator.dart';
 import 'package:cloth_shopping_app/views/components/horizontal_product_card.dart';
 import 'package:cloth_shopping_app/views/components/product_listview.dart';
 import 'package:cloth_shopping_app/views/components/vertical_product_card.dart';
@@ -15,6 +19,43 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+  late PageController _pageController;
+  late Timer _timer;
+  List<String> offers = [
+    "assets/illustrations/onb1.png",
+    "assets/illustrations/onb2.png",
+    "assets/illustrations/onb3.png",
+    "assets/illustrations/onb4.png",
+    "assets/illustrations/onb5.png",
+  ];
+  @override
+  void initState() {
+    _pageController = PageController(initialPage: 0);
+    _timer = Timer.periodic(const Duration(seconds: 4), (Timer timer) {
+      if (_selectedIndex < offers.length - 1) {
+        _selectedIndex++;
+      } else {
+        _selectedIndex = 0;
+      }
+
+      _pageController.animateToPage(
+        _selectedIndex,
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeOutCubic,
+      );
+    });
+    super.initState();
+    print(offers.length);
+  }
+
+  // @override
+  // void dispose() {
+  //   _pageController.dispose();
+  //   _timer.cancel();
+  //   super.dispose();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -57,10 +98,52 @@ class _HomePageState extends State<HomePage> {
                 alignment: Alignment.bottomRight,
                 children: [
                   PageView.builder(
-                      itemCount: 5,
+                      itemCount: offers.length,
+                      controller: _pageController,
+                      onPageChanged: (value) {
+                        setState(() {
+                          _selectedIndex = value;
+                        });
+                        _pageController.animateToPage(
+                          _selectedIndex,
+                          duration: const Duration(milliseconds: 350),
+                          curve: Curves.easeOutCubic,
+                        );
+                      },
                       itemBuilder: (context, index) {
-                        return Container();
-                      })
+                        return Container(
+                          padding: EdgeInsets.zero,
+                          child: Image.asset(
+                            offers[index],
+                            fit: BoxFit.fill,
+                          ),
+                        );
+                      }),
+                  FittedBox(
+                    child: Padding(
+                      padding: const EdgeInsets.all(defaultPadding),
+                      child: SizedBox(
+                        height: 16,
+                        child: Row(
+                          children: List.generate(
+                            offers.length,
+                            (index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(
+                                    left: defaultPadding / 4),
+                                child: DotIndicator(
+                                  isActive: index == _selectedIndex,
+                                  activeColor: AppColors.primaryColor,
+                                  inActiveColor:
+                                      AppColors.primaryColor.withOpacity(0.5),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
