@@ -1,6 +1,6 @@
 import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/constants/images.dart';
-import 'package:cloth_shopping_app/views/components/custom_icon_button.dart';
+import 'package:cloth_shopping_app/views/components/buttons/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 
 class CustomBackButton extends StatelessWidget {

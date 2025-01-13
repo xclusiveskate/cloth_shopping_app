@@ -4,12 +4,12 @@ import 'package:cloth_shopping_app/constants/images.dart';
 import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/constants/texts.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
+import 'package:cloth_shopping_app/views/components/buttons/custom_icon_button.dart';
 import 'package:cloth_shopping_app/views/components/custom_circleavatar.dart';
-import 'package:cloth_shopping_app/views/components/custom_icon_button.dart';
 import 'package:cloth_shopping_app/views/components/dot.indicator.dart';
-import 'package:cloth_shopping_app/views/components/horizontal_product_card.dart';
-import 'package:cloth_shopping_app/views/components/product_listview.dart';
-import 'package:cloth_shopping_app/views/components/vertical_product_card.dart';
+import 'package:cloth_shopping_app/views/components/product/horizontal_product_card.dart';
+import 'package:cloth_shopping_app/views/components/product/product_listview.dart';
+import 'package:cloth_shopping_app/views/components/product/vertical_product_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

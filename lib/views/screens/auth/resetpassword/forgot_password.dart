@@ -1,9 +1,9 @@
 import 'package:cloth_shopping_app/constants/colors.dart';
 import 'package:cloth_shopping_app/constants/validators.dart';
 import 'package:cloth_shopping_app/views/components/app_styles.dart';
-import 'package:cloth_shopping_app/views/components/back_button.dart';
-import 'package:cloth_shopping_app/views/components/elevated_button.dart';
-import 'package:cloth_shopping_app/views/components/text_form_field.dart';
+import 'package:cloth_shopping_app/views/components/buttons/back_button.dart';
+import 'package:cloth_shopping_app/views/components/buttons/elevated_button.dart';
+import 'package:cloth_shopping_app/views/components/formfield/text_form_field.dart';
 import 'package:cloth_shopping_app/views/screens/auth/resetpassword/reset_otp_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';

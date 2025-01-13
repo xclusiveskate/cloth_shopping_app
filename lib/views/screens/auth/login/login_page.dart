@@ -1,7 +1,7 @@
 import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/constants/validators.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:cloth_shopping_app/views/components/label_text.dart';
+import 'package:cloth_shopping_app/views/components/formfield/label_text.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -43,7 +43,9 @@ class _SignInPageState extends State<SignInPage> {
                     Text(
                       "Welcome !!!",
                       style: textStyle(
-                          size: 24, color: AppColors.blackColor, weight: FontWeight.w500),
+                          size: 24,
+                          color: AppColors.blackColor,
+                          weight: FontWeight.w500),
                     ),
                     const Gap(5),
                     Text("Log in to continue enjoying our exclusive offers",

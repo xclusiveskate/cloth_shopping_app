@@ -1,9 +1,9 @@
 export 'package:cloth_shopping_app/constants/colors.dart';
 export 'package:cloth_shopping_app/entry_point.dart';
 export 'package:cloth_shopping_app/views/components/app_styles.dart';
-export 'package:cloth_shopping_app/views/components/custom_otp_page.dart';
-export 'package:cloth_shopping_app/views/components/elevated_button.dart';
-export 'package:cloth_shopping_app/views/components/text_form_field.dart';
+export 'package:cloth_shopping_app/views/components/buttons/custom_otp_page.dart';
+export 'package:cloth_shopping_app/views/components/buttons/elevated_button.dart';
+export 'package:cloth_shopping_app/views/components/formfield/text_form_field.dart';
 export 'package:cloth_shopping_app/views/screens/auth/login/login_page.dart';
 export 'package:cloth_shopping_app/views/screens/auth/resetpassword/forgot_password.dart';
 export 'package:cloth_shopping_app/views/screens/auth/resetpassword/new_password.dart';

@@ -1,6 +1,6 @@
 import 'package:cloth_shopping_app/constants/validators.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:cloth_shopping_app/views/components/back_button.dart';
+import 'package:cloth_shopping_app/views/components/buttons/back_button.dart';
 
 class EnterNewPasswordPage extends StatefulWidget {
   const EnterNewPasswordPage({super.key});

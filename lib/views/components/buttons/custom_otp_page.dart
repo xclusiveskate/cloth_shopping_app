@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:cloth_shopping_app/views/components/back_button.dart';
-import 'package:cloth_shopping_app/views/components/otp_fields.dart';
+import 'package:cloth_shopping_app/views/components/buttons/back_button.dart';
+import 'package:cloth_shopping_app/views/components/formfield/otp_fields.dart';
 
 class CustomOtpPage extends StatefulWidget {
   const CustomOtpPage({super.key, required this.onPressed});

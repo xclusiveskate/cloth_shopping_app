@@ -1,7 +1,7 @@
 import 'package:cloth_shopping_app/constants/padding.dart';
 import 'package:cloth_shopping_app/models/onboard_model.dart';
 import 'package:cloth_shopping_app/routes/exports.dart';
-import 'package:cloth_shopping_app/views/components/input_field.dart';
+import 'package:cloth_shopping_app/views/components/formfield/input_field.dart';
 
 class SelectPreferredLangPage extends StatefulWidget {
   const SelectPreferredLangPage({super.key});
